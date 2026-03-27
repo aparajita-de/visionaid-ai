@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAid AI - Rural Healthcare Diagnostic Support</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo-icon">🏥</div>
+                <div class="logo-text">
+                    <h1>VisionAid AI</h1>
+                    <p>GenAI-Powered Diagnostic Support for Rural Healthcare</p>
+                </div>
+            </div>
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                System Operational
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <div class="card">
+                    <h2>Medical Scan Upload</h2>
+                    <p class="subtitle">Upload X-ray, CT, or MRI scans for AI-assisted analysis</p>
+                    
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📷</div>
+                        <p>Drag & drop medical images here</p>
+                        <p class="file-info">Supports: DICOM, JPEG, PNG (max 50MB)</p>
+                        <button class="btn-secondary" id="selectFileBtn">Select File</button>
+                        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/dicom" hidden>
+                    </div>
+                </div>
+
+                <!-- Patient Information -->
+                <div class="card">
+                    <h2>Patient Information</h2>
+                    <div class="form-group">
+                        <label>Age (years)</label>
+                        <input type="number" id="patientAge" placeholder="Enter patient age" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select id="patientGender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Symptoms</label>
+                        <textarea id="symptoms" rows="3" placeholder="Describe symptoms (e.g., cough, fever, chest pain)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Clinical Notes (Optional)</label>
+                        <textarea id="clinicalNotes" rows="2" placeholder="Additional clinical context"></textarea>
+                    </div>
+                    <button class="btn-primary" id="analyzeBtn" disabled>
+                        <span class="btn-text">Analyze Scan</span>
+                        <span class="btn-loader" style="display: none;">⏳</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="card">
+                    <div class="results-header">
+                        <h2>Preliminary Analysis Report</h2>
+                        <div class="confidence-badge" id="confidenceBadge"></div>
+                    </div>
+                    
+                    <div class="critical-alert" id="criticalAlert" style="display: none;">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <strong>Critical Findings Detected</strong>
+                            <span id="criticalFindings"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="findings-section">
+                        <h3>Key Findings</h3>
+                        <div id="findingsList"></div>
+                    </div>
+                    
+                    <div class="explanation-section">
+                        <h3>Clinical Explanation</h3>
+                        <p id="explanation"></p>
+                    </div>
+                    
+                    <div class="recommendations-section">
+                        <h3>Recommendations</h3>
+                        <ul id="recommendations"></ul>
+                    </div>
+                    
+                    <div class="compliance-section">
+                        <h3>Compliance Codes</h3>
+                        <div class="code-grid">
+                            <div class="code-card">
+                                <strong>ICD-10 Codes</strong>
+                                <div id="icd10Codes"></div>
+                            </div>
+                            <div class="code-card">
+                                <strong>CPT Codes</strong>
+                                <div id="cptCodes"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="disclaimer">
+                        <strong>⚠️ Disclaimer:</strong> This is an AI-assisted preliminary analysis. All findings require clinical correlation and verification by a qualified healthcare professional.
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn-secondary" id="downloadReportBtn">Download Report</button>
+                        <button class="btn-secondary" id="newAnalysisBtn">New Analysis</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audit Trail -->
+        <div class="audit-section" id="auditSection" style="display: none;">
+            <div class="card">
+                <h3>Audit Trail</h3>
+                <div id="auditInfo"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
