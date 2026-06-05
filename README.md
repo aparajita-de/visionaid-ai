@@ -1,9 +1,19 @@
-
-```markdown
 # VisionAid AI - GenAI-Powered Diagnostic Support for Rural Healthcare
 
 
+
 **VisionAid AI** bridges the critical gap in rural healthcare by transforming medical imaging data into natural language, specialist-level diagnostic insights[span_0](start_span)[span_0](end_span). Designed for areas with adequate equipment but a shortage of on-site radiologists, this platform empowers General Practitioners (GPs) to make rapid, informed decisions[span_1](start_span)[span_1](end_span).
+
+For detailed development history and original competitive proposals, please refer to the project documentation file: `Aparajita De_ET Gen AI Hackathon.pdf`.
+
+---
+
+## 👥 Team Information
+* **Team Name:** rupkotha4002[span_2](start_span)[span_2](end_span)
+* **Team Member:** Aparajita De (Solo)[span_3](start_span)[span_3](end_span)
+* **College:** College of Engineering & Management, Kolaghat[span_4](start_span)[span_4](end_span)
+
+---
 
 ## 📌 Problem Statement
 Rural healthcare centers often possess essential diagnostic hardware (such as X-ray and CT machines) but lack on-site specialized radiologists[span_5](start_span)[span_5](end_span). 
@@ -27,8 +37,6 @@ VisionAid AI features a lightweight, accessible web-based interface built for lo
 ## 🛠️ Proposed Method
 The architecture implements a sophisticated **Multimodal RAG (Retrieval-Augmented Generation)** framework[span_16](start_span)[span_16](end_span):
 
-
-```
 [ Medical Scan ] + [ Patient Vitals ]
 │
 ▼
@@ -48,7 +56,8 @@ The architecture implements a sophisticated **Multimodal RAG (Retrieval-Augmente
 │
 ▼
 [ Preliminary Diagnostic Report ]
-```
+
+
 
 1. **Vision-Language Model:** Utilizes fine-tuned medical vision-language models (e.g., LLaVA-Med or Med-PaLM 2) to interpret visual pixels directly into structured medical text[span_17](start_span)[span_17](end_span).
 2. **Contextual Layer:** Integrates clinical patient vitals alongside the image data, ensuring the model evaluates the scan with proper clinical context[span_18](start_span)[span_18](end_span).
@@ -84,6 +93,6 @@ Unlike standard AI classification models, VisionAid AI provides **interpretabili
 
 ---
 
-## This project is build by Aparajita De, BTech (AIML), CEMK (2024-2028)
+## 📄 Author 
+Aparajita De, BTech (AIML), CEMK(2024-2028) on ET GEN AI HACKATHON 
 
-```
